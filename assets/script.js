@@ -15,6 +15,7 @@ function getWeatherData() {
 .then(function (response) {
     console.log(response);
     console.log(response.name);
+    gps(response.coord.lat, response.coord.lon);
 
     var selectedCity = document.createElement('div');
     selectedCity.setAttribute('class', 'cityCard');
@@ -67,7 +68,20 @@ function getWeatherData() {
       console.log(cityDate, currTemp, breeze, humidity);
     });
 };
-
+function gps(lat, long) {
+    var apiCall =
+      "https://api.openweathermap.org/data/2.5/onecall?lat=" +
+      lat + "&lon=" + long +
+      "&exclude=minutely,hourly,alerts&appid=15a2f6e975005b96c0df56340849949d&units=imperial";
+        fetch(apiCall)
+        .then(function (res) {
+         return res.json();
+          })
+      .then(function (response) {
+        console.log(response);
+        displayWeather(response.daily);
+      });
+  }
 
 
 
