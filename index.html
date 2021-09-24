@@ -10,20 +10,23 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="navbar navbar-static-top">
-        WEATHER DASHBOARD
-    </header>
-
+    <h1>Weather Dashboard</h1>
     <div>
-        <h2>Search for a city</h2>
-        <input type="text" id="city" name="city" class="search">
-        <button id="searchCity" class="btn btn-default">SUBMIT</button>
+      Search for a City:
+      <input type="text" id="city" />
+      <button id="submitCity">Submit</button>
+      <div id="searchHistory">
+      Search History
+      <button id="pastCity"></button>
     </div>
 
-    <div id="cityDisplay"></div>
-    <div id="5dayDisplay"></div>
-        <h2>YOUR 5 DAY FORECAST</h2>
-    <div id="textDisplay"></div>
+    <div id="currentCity"></div>
+
+    <div id="fiveDay">5 Day forecast</div>
+
+    
+    </div>
+
 
     <script src="assets/script.js"></script>    
 </body>
